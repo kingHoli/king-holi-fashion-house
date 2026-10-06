@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>King Holi Fashion House</title>
+<meta name="description" content="King Holi Fashion House — premium fashion and accessories.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="brand">KING HOLI <span>FASHION HOUSE</span></div>
+  <button class="cart-btn" onclick="toggleCart()">Cart <b id="cartCount">0</b></button>
+</header>
+
+<section class="hero">
+  <p class="eyebrow">WELCOME TO KING HOLI</p>
+  <h1>Style that speaks<br><em>for itself.</em></h1>
+  <p>Discover carefully selected fashion pieces and accessories for your everyday look.</p>
+  <a href="#shop" class="button">Shop Collection</a>
+</section>
+
+<main id="shop">
+  <div class="section-head">
+    <div><p class="eyebrow">OUR COLLECTION</p><h2>Featured Products</h2></div>
+  </div>
+  <div class="products" id="products"></div>
+</main>
+
+<aside class="cart" id="cart">
+  <div class="cart-head"><h2>Your Cart</h2><button onclick="toggleCart()">×</button></div>
+  <div id="cartItems"><p class="empty">Your cart is empty.</p></div>
+  <div class="cart-total"><span>Total</span><strong id="cartTotal">₦0</strong></div>
+  <button class="checkout" onclick="checkout()">Order on WhatsApp</button>
+</aside>
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+<footer>
+  <div class="brand">KING HOLI <span>FASHION HOUSE</span></div>
+  <p>Premium fashion. Confident style.</p>
+  <p>© 2026 King Holi Fashion House. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
