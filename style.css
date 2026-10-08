@@ -19,3 +19,8 @@
   object-fit: cover;
   display: block;
 }
+
+.product-img{
+  border-radius:10px;
+  overflow:hidden;
+}
