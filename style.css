@@ -30,3 +30,7 @@
   cursor:pointer;
   transition:.2s;
 }
+
+.add:active{
+  transform:scale(.98);
+}
