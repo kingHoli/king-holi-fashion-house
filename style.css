@@ -41,3 +41,12 @@
   color:#aaa;
   font-size:12px;
 }
+
+.category{
+  display:block;
+  margin-top:6px;
+  color:#bcae97;
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
