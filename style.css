@@ -6,3 +6,9 @@
   padding: 8px 12px;
   border-radius: 6px;
 }
+
+.product {
+  background: #111;
+  padding: 12px;
+  border-radius: 12px;
+}
