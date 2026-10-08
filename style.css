@@ -24,3 +24,9 @@
   border-radius:10px;
   overflow:hidden;
 }
+
+.add{
+  border-radius:6px;
+  cursor:pointer;
+  transition:.2s;
+}
