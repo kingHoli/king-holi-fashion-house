@@ -5,7 +5,7 @@ const products=[
 {name:"Baggy Jeans",price:22000,category:"Baggy Jeans"},
 {name:"Round Neck Tee",price:10000,category:"Round Neck Tees"},
 {name:"Fashion Slippers",price:12000,category:"Slippers"},
-{name:"Statement Bag",price:15000},
+{name:"Statement Bag",price:15000,category:"Bags"},
 {name:"Bomb Short",price:11000}
 ];
 let cart=[];
