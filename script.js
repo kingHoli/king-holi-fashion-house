@@ -4,7 +4,7 @@ const products=[
 {name:"Premium Crop Top",price:9000,category:"Crop Tops",description:"A stylish crop top that pairs perfectly with high-waisted jeans, skirts, and shorts. Great for casual outings and trendy everyday looks."},
 {name:"Baggy Jeans",price:22000,category:"Baggy Jeans",description:"Relaxed-fit baggy jeans that bring comfort and street-style vibes to your outfit. Easy to pair with T-shirts, crop tops, and sneakers."},
 {name:"Round Neck Tee",price:10000,category:"Round Neck Tees",description:"A classic round-neck T-shirt made for effortless everyday style. Easy to pair with jeans, shorts, and sneakers for a clean, casual look."},
-{name:"Fashion Slippers",price:12000,category:"Slippers"},
+{name:"Fashion Slippers",price:12000,category:"Slippers",description:"Comfortable and stylish slippers for everyday wear. Easy to slip on and perfect for casual outings and relaxed days."},
 {name:"Statement Bag",price:15000,category:"Bags"},
 {name:"Bomb Short",price:11000,category:"Shorts"}
 ];
