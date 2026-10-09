@@ -5,7 +5,7 @@ const products=[
 {name:"Baggy Jeans",price:22000,category:"Baggy Jeans",description:"Relaxed-fit baggy jeans that bring comfort and street-style vibes to your outfit. Easy to pair with T-shirts, crop tops, and sneakers."},
 {name:"Round Neck Tee",price:10000,category:"Round Neck Tees",description:"A classic round-neck T-shirt made for effortless everyday style. Easy to pair with jeans, shorts, and sneakers for a clean, casual look."},
 {name:"Fashion Slippers",price:12000,category:"Slippers",description:"Comfortable and stylish slippers for everyday wear. Easy to slip on and perfect for casual outings and relaxed days."},
-{name:"Statement Bag",price:15000,category:"Bags"},
+{name:"Statement Bag",price:15000,category:"Bags",description:"A stylish statement bag that adds a fashionable touch to your outfit. Perfect for everyday essentials, casual outings, and special occasions."},
 {name:"Bomb Short",price:11000,category:"Shorts"}
 ];
 let cart=[];
