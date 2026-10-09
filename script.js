@@ -3,7 +3,7 @@ const products=[
 {name:"Red Sparkle Bow Girls’ Party Dress",price:24500,image:"172181fa-4710-492a-9c9c-4f99b06286a5.jpeg",description:"Elegant red girls’ party dress with puff sleeves, a large bow detail, and sparkling tulle skirt. Perfect for birthdays, parties, celebrations, and special occasions.",category:"Girls’ Dresses",},
 {name:"Premium Crop Top",price:9000,category:"Crop Tops",description:"A stylish crop top that pairs perfectly with high-waisted jeans, skirts, and shorts. Great for casual outings and trendy everyday looks."},
 {name:"Baggy Jeans",price:22000,category:"Baggy Jeans",description:"Relaxed-fit baggy jeans that bring comfort and street-style vibes to your outfit. Easy to pair with T-shirts, crop tops, and sneakers."},
-{name:"Round Neck Tee",price:10000,category:"Round Neck Tees"},
+{name:"Round Neck Tee",price:10000,category:"Round Neck Tees",description:"A classic round-neck T-shirt made for effortless everyday style. Easy to pair with jeans, shorts, and sneakers for a clean, casual look."},
 {name:"Fashion Slippers",price:12000,category:"Slippers"},
 {name:"Statement Bag",price:15000,category:"Bags"},
 {name:"Bomb Short",price:11000,category:"Shorts"}
