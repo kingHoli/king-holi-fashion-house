@@ -6,7 +6,7 @@ const products=[
 {name:"Round Neck Tee",price:10000,category:"Round Neck Tees"},
 {name:"Fashion Slippers",price:12000,category:"Slippers"},
 {name:"Statement Bag",price:15000,category:"Bags"},
-{name:"Bomb Short",price:11000}
+{name:"Bomb Short",price:11000,category:"Shorts"}
 ];
 let cart=[];
 const naira=n=>new Intl.NumberFormat("en-NG",{style:"currency",currency:"NGN",maximumFractionDigits:0}).format(n);
