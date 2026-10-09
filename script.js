@@ -1,5 +1,5 @@
 const products=[
-{name:"Classic Basic Top",price:8500},
+{name:"Classic Basic Top",price:8500,category:"Basic Tops"},
 {name:"Red Sparkle Bow Girls’ Party Dress",price:24500,image:"172181fa-4710-492a-9c9c-4f99b06286a5.jpeg",description:"Elegant red girls’ party dress with puff sleeves, a large bow detail, and sparkling tulle skirt. Perfect for birthdays, parties, celebrations, and special occasions.",category:"Girls’ Dresses",},
 {name:"Premium Crop Top",price:9000},
 {name:"Baggy Jeans",price:22000},
