@@ -4,7 +4,7 @@ const products=[
 {name:"Premium Crop Top",price:9000,category:"Crop Tops"},
 {name:"Baggy Jeans",price:22000,category:"Baggy Jeans"},
 {name:"Round Neck Tee",price:10000,category:"Round Neck Tees"},
-{name:"Fashion Slippers",price:12000},
+{name:"Fashion Slippers",price:12000,category:"Slippers"},
 {name:"Statement Bag",price:15000},
 {name:"Bomb Short",price:11000}
 ];
