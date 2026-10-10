@@ -7,7 +7,8 @@ const products=[
 {name:"Round Neck Tee",price:10000,category:"Round Neck Tees",description:"A classic round-neck T-shirt made for effortless everyday style. Easy to pair with jeans, shorts, and sneakers for a clean, casual look."},
 {name:"Fashion Slippers",price:12000,category:"Slippers",description:"Comfortable and stylish slippers for everyday wear. Easy to slip on and perfect for casual outings and relaxed days."},
 {name:"Statement Bag",price:15000,category:"Bags",description:"A stylish statement bag that adds a fashionable touch to your outfit. Perfect for everyday essentials, casual outings, and special occasions."},
-{name:"Bomb Short",price:11000,category:"Shorts",description:"Stylish shorts designed for a relaxed, casual look. Easy to pair with T-shirts and sneakers for everyday wear and outings."}
+{name:"Bomb Short",price:11000,category:"Shorts",description:"Stylish shorts designed for a relaxed, casual look. Easy to pair with T-shirts and sneakers for everyday wear and outings."},
+{name:"Rainbow Sparkle Bow Girls’ Party Dress",price:24500,image:"8250fd81-1688-480e-9efc-7c3cbe2749a7.jpeg",description:"A beautiful rainbow girls’ party dress with a colorful, sparkling skirt and an elegant bow detail. Perfect for birthdays, parties, and special occasions.",category:"Girls’ Dresses"}
 ];
 let cart=[];
 const naira=n=>new Intl.NumberFormat("en-NG",{style:"currency",currency:"NGN",maximumFractionDigits:0}).format(n);
