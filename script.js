@@ -9,7 +9,7 @@ const products=[
 {name:"Statement Bag",price:15000,category:"Bags",description:"A stylish statement bag that adds a fashionable touch to your outfit. Perfect for everyday essentials, casual outings, and special occasions."},
 {name:"Bomb Short",price:11000,category:"Shorts",description:"Stylish shorts designed for a relaxed, casual look. Easy to pair with T-shirts and sneakers for everyday wear and outings."},
 {name:"Pink Sparkle Bow Girls’ Party Dress",price:24500,image:"7687747d-2cf5-4344-a11a-b0aa1db065bf.jpeg",description:"A beautiful pink girls’ party dress with puff sleeves, a large satin bow, and a sparkling tulle skirt. Perfect for birthdays, parties, and special occasions.",category:"Girls’ Dresses"},
-{name:"Rainbow Sparkle Bow Girls’ Party Dress",price:24500,image:"8250fd81-1688-480e-9efc-7c3cbe2749a7.jpeg",description:"A beautiful rainbow girls’ party dress with a colorful, sparkling skirt and an elegant bow detail. Perfect for birthdays, parties, and special occasions.",category:"Girls’ Dresses"}
+{name:"Rainbow Sparkle Bow Girls’ Party Dress",price:24500,image:"8250fd81-1688-480e-9efc-7c3cbe2749a7.jpeg",description:"A beautiful rainbow girls’ party dress with a colorful, sparkling skirt and an elegant bow detail. Perfect for birthdays, parties, and special occasions.",category:"Girls’ Dresses"},
 {name:"Cream Flower Bow Girls’ Party Dress",price:24500,image:"f84c7988-5678-4551-bd29-dbcf33000217.jpeg",description:"An elegant cream girls’ party dress featuring beautiful peach flowers at the waist, a large satin bow at the back, and a sparkling tulle skirt. Perfect for birthdays, parties, and special occasions.",category:"Girls’ Dresses"}
 ];
 let cart=[];
