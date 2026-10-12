@@ -29,7 +29,27 @@ document.getElementById("products").innerHTML=products.map((p,i)=>`<article clas
 function addToCart(i){cart.push(products[i]);renderCart();toggleCart(true)}
 function renderCart(){document.getElementById("cartCount").textContent=cart.length;document.getElementById("cartItems").innerHTML=cart.length?cart.map((p,i)=>`<div class="cart-item"><span>${p.name}</span><b>${naira(p.price)}</b></div>`).join(""):'<p class="empty">Your cart is empty.</p>';document.getElementById("cartTotal").textContent=naira(cart.reduce((s,p)=>s+p.price,0))}
 function toggleCart(force){const open=force===true||!document.getElementById("cart").classList.contains("open");document.getElementById("cart").classList.toggle("open",open);document.getElementById("overlay").classList.toggle("show",open)}
-function checkout(){if(!cart.length)return alert("Your cart is empty.");const text="Hello King Holi Fashion House, I would like to order:%0A"+cart.map(p=>`• ${p.name} — ${naira(p.price)}`).join("%0A")+`%0A%0ATotal: ${naira(cart.reduce((s,p)=>s+p.price,0))}`;window.open("https://wa.me/2347075198152?text="+text,"_blank")}
+function checkout(){
+  if(!cart.length)return alert("Your cart is empty.");
+
+  const total = cart.reduce((s,p)=>s+p.price,0);
+  const order = cart.map(p=>`• ${p.name} — ${naira(p.price)}`).join("\n");
+
+  const message =
+    "Hello King Holi Fashion House, I would like to order:\n" +
+    order +
+    "\n\nTotal: " + naira(total) +
+    "\n\nPayment method: PalmPay transfer" +
+    "\nAccount Name: Gift Akpan" +
+    "\nBank: PalmPay" +
+    "\nAccount Number: 9052323217" +
+    "\nI will send my payment receipt after transferring.";
+
+  window.open(
+    "https://wa.me/2347075198152?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
 const productStructuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
