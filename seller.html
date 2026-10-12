@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Registration | King Holi Fashion House</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 450px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    form {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+    }
+    h1 { text-align: center; }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+    }
+    button {
+      background: #111;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+    }
+    #message { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <form id="seller-form">
+    <h1>Become a Seller</h1>
+    <p>Join King Holi Fashion House and start listing your products.</p>
+
+    <label for="name">Full name</label>
+    <input id="name" type="text" autocomplete="name" required>
+
+    <label for="email">Email address</label>
+    <input id="email" type="email" autocomplete="email" required>
+
+    <label for="phone">Phone number</label>
+    <input id="phone" type="tel" autocomplete="tel" required>
+
+    <label for="password">Password (at least 8 characters)</label>
+    <input id="password" type="password" autocomplete="new-password"
+           minlength="8" required>
+
+    <button type="submit">Create Seller Account</button>
+    <p id="message" role="status"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById("seller-form");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      message.textContent = "Creating your account...";
+
+      const fullName = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const password = document.getElementById("password").value;
+
+      try {
+        const { data, error } = await supabaseClient.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              full_name: fullName,
+              phone: phone
+            }
+          }
+        });
+
+        if (error) throw error;
+
+        message.textContent = data.session
+          ? "Account created! You can now sign in."
+          : "Registration received. Check your email to confirm your account before signing in.";
+
+        form.reset();
+      } catch (error) {
+        message.textContent = error.message || "Registration failed. Please try again.";
+      }
+    });
+  </script>
+</body>
+</html>
