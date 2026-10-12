@@ -13,7 +13,14 @@ const products=[
 {name:"Cream Flower Bow Girls’ Party Dress",price:24500,image:"f84c7988-5678-4551-bd29-dbcf33000217.jpeg",description:"An elegant cream girls’ party dress featuring beautiful peach flowers at the waist, a large satin bow at the back, and a sparkling tulle skirt. Perfect for birthdays, parties, and special occasions.",category:"Girls’ Dresses"},
 {name:"Blue Flower Bow Girls’ Party Dress",price:24500,image:"3f3f011a-2750-4efb-ba3b-b542017bef43.jpeg",description:"A beautiful light blue girls’ party dress featuring blue flowers at the waist, a large satin bow at the back, and a sparkling tulle skirt. Perfect for birthdays, parties, and special occasions.",category:"Girls’ Dresses"},
 {name:"Pink & White Flower Bow Girls’ Party Dress",price:24500,image:"44493cb1-c05d-475f-9e80-c817e0af0616.jpeg",description:"A beautiful pink-and-white girls’ party dress featuring a white satin bodice, a bright pink layered skirt, a cream flower detail, and a large satin bow at the back. Perfect for birthdays, parties, and special occasions.",category:"Girls’ Dresses"},
-{name:"White Cat-Eye Sunglasses with Blue Lenses",price:12000,image:"af361590-ad0b-45a1-af29-76eb31e3c349.jpeg",category:"Fashion Accessories",description:"Make a statement with these stylish white cat-eye sunglasses featuring blue lenses. Perfect for casual outings, holidays, and everyday fashion."}
+{name:"White Cat-Eye Sunglasses with Blue Lenses",price:12000,image:"af361590-ad0b-45a1-af29-76eb31e3c349.jpeg",category:"Fashion Accessories",description:"Make a statement with these stylish white cat-eye sunglasses featuring blue lenses. Perfect for casual outings, holidays, and everyday fashion."},
+{
+  name: "Lavish",
+  price: 36000,
+  image: "60b76c15-5f61-41f9-88f2-f0f253426a9d.jpeg",
+  category: "Women's Dresses",
+  description: "Step out in style with Lavish, a beautiful floral halter-neck dress designed to make every occasion special."
+}
 ];
 let cart=[];
 
