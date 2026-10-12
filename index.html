@@ -8,6 +8,98 @@
 <meta name="description" content="Shop King Holi Fashion House for stylish women's dresses, girls' party dresses, trendy clothing, bags, slippers, and fashion accessories. Discover your next favourite look online.">
 </head>
 <body>
+<button id="menu-toggle" aria-label="Open menu">☰</button>
+
+<nav id="side-menu" style="display:none;">
+  <button id="menu-close" aria-label="Close menu">X</button>
+
+  <h3>King Holi Fashion House</h3>
+
+  <a href="seller.html">CREATE ACCOUNT</a>
+  <a href="seller.html">SIGN IN</a>
+
+  <hr>
+  <a href="#account">Account</a>
+  <a href="#wallet">Wallet</a>
+  <a href="#shops">My Shops</a>
+  <a href="#my-products">My Products</a>
+  <a href="#offers">Offers</a>
+  <a href="#orders">Orders</a>
+  <a href="#connections">Connections</a>
+  <a href="#groups">Groups</a>
+  <a href="#search">Search Products</a>
+
+  <hr>
+  <h3>Shops</h3>
+  <a href="#shops">All Shops</a>
+  <h3>Categories</h3>
+  <a href="#electronics">Electronics</a>
+  <a href="#real-estate">Real Estate</a>
+  <a href="#health-beauty">Health and Beauty</a>
+  <a href="#babies">Babies</a>
+  <a href="#jobs">Jobs</a>
+  <a href="#vehicles">Vehicles</a>
+  <a href="#agriculture-food">Agriculture and Food</a>
+  <a href="#womens-fashion">Women's Fashion</a>
+  <a href="#mens-fashion">Men's Fashion</a>
+  <a href="#phones-tablets">Mobile Phones and Tablets</a>
+  <a href="#services">Services</a>
+  <a href="#everything-else">Everything Else</a>
+</nav>
+
+<style>
+  #menu-toggle {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1001;
+    padding: 10px 14px;
+    font-size: 24px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 6px;
+  }
+
+  #side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    max-width: 85vw;
+    height: 100%;
+    overflow-y: auto;
+    background: white;
+    color: #111;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1002;
+    box-shadow: 2px 0 12px #777;
+  }
+
+  #side-menu a {
+    display: block;
+    padding: 10px 0;
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  #menu-close {
+    float: right;
+    padding: 8px 12px;
+  }
+</style>
+
+<script>
+  document.getElementById("menu-toggle").onclick = function () {
+    document.getElementById("side-menu").style.display = "block";
+  };
+
+  document.getElementById("menu-close").onclick = function () {
+    document.getElementById("side-menu").style.display = "none";
+  };
+</script>
 <header class="header">
   <div class="brand">KING HOLI <span>FASHION HOUSE</span></div>
   <button class="cart-btn" onclick="toggleCart()">Cart <b id="cartCount">0</b></button>
