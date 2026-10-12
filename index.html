@@ -15,8 +15,23 @@
 
   <h3>King Holi Fashion House</h3>
 
-  <a href="seller.html">CREATE ACCOUNT</a>
-  <a href="seller.html">SIGN IN</a>
+  <button type="button" id="open-signup">CREATE ACCOUNT</button>
+<button type="button" id="open-login">SIGN IN</button>
+
+<div id="auth-panel" style="display:none; background:#f5f5f5; padding:15px; margin-top:10px;">
+  <button type="button" id="auth-close">✕ Close</button>
+  <h3 id="auth-title">Create Account</h3>
+
+  <form id="auth-form">
+    <input id="auth-name" type="text" placeholder="Full name" autocomplete="name" required>
+    <input id="auth-phone" type="tel" placeholder="Phone number" autocomplete="tel">
+    <input id="auth-email" type="email" placeholder="Email address" autocomplete="email" required>
+    <input id="auth-password" type="password" placeholder="Password (at least 8 characters)" autocomplete="current-password" minlength="8" required>
+    <button type="submit" id="auth-submit">CREATE ACCOUNT</button>
+  </form>
+
+  <p id="auth-message" role="status"></p>
+</div>
 
   <hr>
   <a href="#account">Account</a>
@@ -99,6 +114,88 @@
   document.getElementById("menu-close").onclick = function () {
     document.getElementById("side-menu").style.display = "none";
   };
+</script>
+<script>
+const authPanel = document.getElementById("auth-panel");
+const authTitle = document.getElementById("auth-title");
+const authForm = document.getElementById("auth-form");
+const authMessage = document.getElementById("auth-message");
+const authName = document.getElementById("auth-name");
+const authPhone = document.getElementById("auth-phone");
+const authPassword = document.getElementById("auth-password");
+const authSubmit = document.getElementById("auth-submit");
+
+let authMode = "signup";
+
+document.getElementById("open-signup").onclick = function () {
+  authMode = "signup";
+  authTitle.textContent = "Create Account";
+  authSubmit.textContent = "CREATE ACCOUNT";
+  authName.style.display = "block";
+  authPhone.style.display = "block";
+  authName.required = true;
+  authPhone.required = true;
+  authPassword.autocomplete = "new-password";
+  authMessage.textContent = "";
+  authPanel.style.display = "block";
+};
+
+document.getElementById("open-login").onclick = function () {
+  authMode = "login";
+  authTitle.textContent = "Sign In";
+  authSubmit.textContent = "SIGN IN";
+  authName.style.display = "none";
+  authPhone.style.display = "none";
+  authName.required = false;
+  authPhone.required = false;
+  authPassword.autocomplete = "current-password";
+  authMessage.textContent = "";
+  authPanel.style.display = "block";
+};
+
+document.getElementById("auth-close").onclick = function () {
+  authPanel.style.display = "none";
+};
+
+authForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
+  authMessage.textContent = "Please wait...";
+
+  const email = document.getElementById("auth-email").value.trim();
+  const password = authPassword.value;
+
+  try {
+    if (authMode === "signup") {
+      const { data, error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+          data: {
+            full_name: authName.value.trim(),
+            phone: authPhone.value.trim()
+          }
+        }
+      });
+
+      if (error) throw error;
+
+      authMessage.textContent = data.session
+        ? "Account created successfully!"
+        : "Account registered! Check your email to confirm your account.";
+    } else {
+      const { error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+      });
+
+      if (error) throw error;
+
+      authMessage.textContent = "You are signed in successfully!";
+    }
+  } catch (error) {
+    authMessage.textContent = error.message || "Something went wrong. Please try again.";
+  }
+});
 </script>
 <header class="header">
   <div class="brand">KING HOLI <span>FASHION HOUSE</span></div>
