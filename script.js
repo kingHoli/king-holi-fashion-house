@@ -22,3 +22,29 @@ function addToCart(i){cart.push(products[i]);renderCart();toggleCart(true)}
 function renderCart(){document.getElementById("cartCount").textContent=cart.length;document.getElementById("cartItems").innerHTML=cart.length?cart.map((p,i)=>`<div class="cart-item"><span>${p.name}</span><b>${naira(p.price)}</b></div>`).join(""):'<p class="empty">Your cart is empty.</p>';document.getElementById("cartTotal").textContent=naira(cart.reduce((s,p)=>s+p.price,0))}
 function toggleCart(force){const open=force===true||!document.getElementById("cart").classList.contains("open");document.getElementById("cart").classList.toggle("open",open);document.getElementById("overlay").classList.toggle("show",open)}
 function checkout(){if(!cart.length)return alert("Your cart is empty.");const text="Hello King Holi Fashion House, I would like to order:%0A"+cart.map(p=>`• ${p.name} — ${naira(p.price)}`).join("%0A")+`%0A%0ATotal: ${naira(cart.reduce((s,p)=>s+p.price,0))}`;window.open("https://wa.me/2347075198152?text="+text,"_blank")}
+const productStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "King Holi Fashion House Products",
+  "numberOfItems": products.length,
+  "itemListElement": products.map((p, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Product",
+      "name": p.name,
+      "description": p.description || "",
+      ...(p.image ? { "image": new URL(p.image, window.location.href).href } : {}),
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "NGN",
+        "price": p.price.toString()
+      }
+    }
+  }))
+};
+
+const structuredDataScript = document.createElement("script");
+structuredDataScript.type = "application/ld+json";
+structuredDataScript.textContent = JSON.stringify(productStructuredData);
+document.head.appendChild(structuredDataScript);
