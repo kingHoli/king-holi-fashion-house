@@ -93,49 +93,34 @@ function searchMarketplace() {
 }
 
 function filterCategory(category) {
-  const productCards = document.querySelectorAll("#products > *");
+  const cards = document.querySelectorAll("#products .product");
 
-  productCards.forEach(function (card, index) {
-    const product = products[index];
-    if (!product) return;
-
-    const productCategory = (product.category || "").toLowerCase();
-    const productName = (product.name || "").toLowerCase();
-
-    let matches = category === "all";
+  cards.forEach(function(card, index) {
+    const p = products[index];
+    const cat = (p.category || "").toLowerCase();
+    let show = category === "all";
 
     if (category === "Women") {
-      matches = productCategory.includes("women") ||
-                productCategory.includes("girls") ||
-                productCategory.includes("dress") ||
-                productCategory.includes("crop top");
+      show = cat.includes("women") || cat.includes("girls") ||
+             cat.includes("dress") || cat.includes("crop");
     } else if (category === "Men") {
-      matches = productCategory.includes("men") ||
-                productCategory.includes("jeans") ||
-                productCategory.includes("round neck") ||
-                productCategory.includes("shorts") ||
-                productCategory.includes("basic tops");
+      show = cat.includes("men") || cat.includes("jeans") ||
+             cat.includes("round neck") || cat.includes("shorts") ||
+             cat.includes("basic tops");
     } else if (category === "Kids") {
-      matches = productCategory.includes("girls") ||
-                productCategory.includes("kids") ||
-                productName.includes("baby");
+      show = cat.includes("girls") || cat.includes("kids");
     } else if (category === "Bags") {
-      matches = productCategory.includes("bag") ||
-                productCategory.includes("accessories");
+      show = cat.includes("bag") || cat.includes("accessories");
     } else if (category === "Slippers") {
-      matches = productCategory.includes("slipper") ||
-                productCategory.includes("shoes");
+      show = cat.includes("slipper") || cat.includes("shoes");
     } else if (category === "Electronics") {
-      matches = productCategory.includes("electronics") ||
-                productCategory.includes("phones");
+      show = cat.includes("electronics") || cat.includes("phones");
     } else if (category === "Home") {
-      matches = productCategory.includes("home");
+      show = cat.includes("home");
     }
 
-    card.style.display = matches ? "" : "none";
+    card.style.display = show ? "" : "none";
   });
 
-  document.getElementById("shop").scrollIntoView({
-    behavior: "smooth"
-  });
+  document.getElementById("shop").scrollIntoView({behavior: "smooth"});
 }
