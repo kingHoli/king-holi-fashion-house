@@ -76,3 +76,18 @@ const structuredDataScript = document.createElement("script");
 structuredDataScript.type = "application/ld+json";
 structuredDataScript.textContent = JSON.stringify(productStructuredData);
 document.head.appendChild(structuredDataScript);
+
+function searchMarketplace() {
+  const searchInput = document.getElementById("marketSearch");
+  const query = searchInput.value.trim().toLowerCase();
+  const productCards = document.querySelectorAll("#products > *");
+
+  productCards.forEach(function (card) {
+    const productText = card.textContent.toLowerCase();
+    card.style.display = productText.includes(query) ? "" : "none";
+  });
+
+  document.getElementById("shop").scrollIntoView({
+    behavior: "smooth"
+  });
+}
