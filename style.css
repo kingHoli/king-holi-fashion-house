@@ -54,3 +54,104 @@
 .product .description:empty {
   display: none;
 }
+
+/* KING HOLI MARKETPLACE HEADER */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 5%;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.brand {
+  font-size: 21px;
+  font-weight: 800;
+  color: #111111;
+}
+
+.brand span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #d49b24;
+}
+
+.market-search {
+  display: flex;
+  flex: 1;
+  min-width: 220px;
+  max-width: 600px;
+}
+
+.market-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #dddddd;
+  border-radius: 6px 0 0 6px;
+  font-size: 14px;
+}
+
+.market-search button {
+  padding: 13px 18px;
+  border: none;
+  background: #f2a900;
+  color: #111111;
+  font-weight: bold;
+  border-radius: 0 6px 6px 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account-btn,
+.cart-btn {
+  padding: 11px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.account-btn {
+  background: #f1f1f1;
+  color: #111111;
+}
+
+.cart-btn {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* MOBILE MARKETPLACE LAYOUT */
+@media (max-width: 600px) {
+  .header {
+    padding: 65px 15px 15px;
+    gap: 14px;
+  }
+
+  .brand {
+    width: 100%;
+  }
+
+  .market-search {
+    width: 100%;
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .header-actions button {
+    flex: 1;
+  }
+}
