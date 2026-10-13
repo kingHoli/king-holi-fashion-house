@@ -155,3 +155,34 @@
     flex: 1;
   }
 }
+
+/* MARKETPLACE CATEGORY BAR */
+.category-bar {
+  display: flex;
+  gap: 24px;
+  padding: 14px 5%;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+.category-bar a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.category-bar a:hover {
+  color: #d49b24;
+}
+
+@media (max-width: 600px) {
+  .category-bar {
+    padding: 12px 15px;
+    gap: 20px;
+  }
+}
