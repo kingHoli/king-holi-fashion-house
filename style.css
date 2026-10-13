@@ -243,3 +243,70 @@
     padding: 24px 18px;
   }
 }
+
+/* Professional King Holi Account Forms */
+#auth-panel {
+  background: #ffffff !important;
+  color: #222222;
+  padding: 26px 20px !important;
+  margin-top: 18px !important;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#auth-panel h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 18px 0;
+  color: #111111;
+}
+
+#auth-panel input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #222222;
+  font-size: 16px;
+}
+
+#auth-panel input:focus {
+  outline: 2px solid #c5a253;
+  border-color: #c5a253;
+}
+
+#auth-panel button {
+  padding: 13px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#auth-panel #auth-submit {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  background: #c5a253;
+  color: #111111;
+}
+
+#auth-panel #auth-close {
+  background: #eeeeee;
+  color: #222222;
+  float: right;
+}
+
+#auth-message {
+  margin-top: 15px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
