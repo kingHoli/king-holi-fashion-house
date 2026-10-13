@@ -91,3 +91,30 @@ function searchMarketplace() {
     behavior: "smooth"
   });
 }
+
+function filterCategory(category) {
+  const productCards = document.querySelectorAll("#products > *");
+
+  productCards.forEach(function (card) {
+    if (category === "all") {
+      card.style.display = "";
+      return;
+    }
+
+    const productText = card.textContent.toLowerCase();
+    const searchCategory = category.toLowerCase();
+
+    const matches =
+      productText.includes(searchCategory) ||
+      (category === "Women" && productText.includes("dress")) ||
+      (category === "Kids" && productText.includes("girls")) ||
+      (category === "Bags" && productText.includes("bag")) ||
+      (category === "Slippers" && productText.includes("slipper"));
+
+    card.style.display = matches ? "" : "none";
+  });
+
+  document.getElementById("shop").scrollIntoView({
+    behavior: "smooth"
+  });
+}
