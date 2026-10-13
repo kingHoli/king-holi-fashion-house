@@ -199,7 +199,16 @@ authForm.addEventListener("submit", async function (event) {
 </script>
 <header class="header">
   <div class="brand">KING HOLI <span>FASHION HOUSE</span></div>
-  <button class="cart-btn" onclick="toggleCart()">Cart <b id="cartCount">0</b></button>
+
+  <div class="market-search">
+    <input type="search" id="marketSearch" placeholder="Search products, brands and shops">
+    <button type="button" onclick="searchMarketplace()">Search</button>
+  </div>
+
+  <div class="header-actions">
+    <button class="account-btn" type="button" onclick="document.getElementById('menu-toggle').click()">Account</button>
+    <button class="cart-btn" onclick="toggleCart()">Cart <b id="cartCount">0</b></button>
+  </div>
 </header>
 
 <section class="hero">
