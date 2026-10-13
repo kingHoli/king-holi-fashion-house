@@ -95,21 +95,42 @@ function searchMarketplace() {
 function filterCategory(category) {
   const productCards = document.querySelectorAll("#products > *");
 
-  productCards.forEach(function (card) {
-    if (category === "all") {
-      card.style.display = "";
-      return;
+  productCards.forEach(function (card, index) {
+    const product = products[index];
+    if (!product) return;
+
+    const productCategory = (product.category || "").toLowerCase();
+    const productName = (product.name || "").toLowerCase();
+
+    let matches = category === "all";
+
+    if (category === "Women") {
+      matches = productCategory.includes("women") ||
+                productCategory.includes("girls") ||
+                productCategory.includes("dress") ||
+                productCategory.includes("crop top");
+    } else if (category === "Men") {
+      matches = productCategory.includes("men") ||
+                productCategory.includes("jeans") ||
+                productCategory.includes("round neck") ||
+                productCategory.includes("shorts") ||
+                productCategory.includes("basic tops");
+    } else if (category === "Kids") {
+      matches = productCategory.includes("girls") ||
+                productCategory.includes("kids") ||
+                productName.includes("baby");
+    } else if (category === "Bags") {
+      matches = productCategory.includes("bag") ||
+                productCategory.includes("accessories");
+    } else if (category === "Slippers") {
+      matches = productCategory.includes("slipper") ||
+                productCategory.includes("shoes");
+    } else if (category === "Electronics") {
+      matches = productCategory.includes("electronics") ||
+                productCategory.includes("phones");
+    } else if (category === "Home") {
+      matches = productCategory.includes("home");
     }
-
-    const productText = card.textContent.toLowerCase();
-    const searchCategory = category.toLowerCase();
-
-    const matches =
-      productText.includes(searchCategory) ||
-      (category === "Women" && productText.includes("dress")) ||
-      (category === "Kids" && productText.includes("girls")) ||
-      (category === "Bags" && productText.includes("bag")) ||
-      (category === "Slippers" && productText.includes("slipper"));
 
     card.style.display = matches ? "" : "none";
   });
