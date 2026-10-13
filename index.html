@@ -27,10 +27,10 @@
     <input id="auth-phone" type="tel" placeholder="Phone number" autocomplete="tel">
     <input id="auth-email" type="email" placeholder="Email address" autocomplete="email" required>
     <input id="auth-password" type="password" placeholder="Password (at least 8 characters)" autocomplete="current-password" minlength="8" required>
+    <button type="button" id="forgot-password">Forgot Password?</button>
     <button type="submit" id="auth-submit">CREATE ACCOUNT</button>
   </form>
-
-  <p id="auth-message" role="status"></p>
+<p id="auth-message" role="status"></p>
 </div>
 
   <hr>
@@ -194,6 +194,26 @@ authForm.addEventListener("submit", async function (event) {
     }
   } catch (error) {
     authMessage.textContent = error.message || "Something went wrong. Please try again.";
+  }
+});
+document.getElementById("forgot-password").addEventListener("click", async function () {
+  const email = document.getElementById("auth-email").value.trim();
+
+  if (!email) {
+    authMessage.textContent = "Please enter your email address first.";
+    return;
+  }
+
+  authMessage.textContent = "Sending reset email...";
+
+  const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+    redirectTo: "https://kingholi.github.io/king-holi-fashion-house/"
+  });
+
+  if (error) {
+    authMessage.textContent = error.message;
+  } else {
+    authMessage.textContent = "Check your email for password reset instructions.";
   }
 });
 </script>
